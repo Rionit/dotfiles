@@ -40,4 +40,6 @@ lazy = true
 
 "Webcam" = "mpv /dev/video0"
 
+"Choose wallpaper" = "bash ~/scripts/set_wallpaper.sh manual"
+
 "Hyprland logs" = 'kitty tail -f $XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/hyprland.log'
