@@ -1,0 +1,59 @@
+window {
+    background-color: #000000;
+    color: #ebe9fc;
+    border: 2px solid #abbcda;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 #000000,
+        1px -1px 0 #000000,
+        -1px 1px 0 #000000,
+        1px 1px 0 #000000;
+}
+
+#entry {
+    padding: 6px 10px;
+    margin: 3px;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    background-color: #913ce6;
+    color: #000000;
+}
+
+#input {
+    padding: 4px;
+    margin: 4px;
+    padding-left: 20px;
+    border: none;
+    color: #ebe9fc;
+    font-weight: bold;
+    background-color: #000000;
+    background: ;
+   	outline: none;
+    border-radius: 15px;
+    margin: 10px;
+    margin-bottom: 2px;
+}
+#input:focus {
+    border: 0px solid #000000;
+    margin-bottom: 0px;
+}
+
+#inner-box {
+    padding: 10px;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 0;
+}
+
+#scroll {
+    margin: 0;
+    padding: 0;
+}

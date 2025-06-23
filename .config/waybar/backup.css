@@ -1,0 +1,128 @@
+* {
+    border: none;
+    border-radius: 15;
+    min-height: 0;
+    font-family: "FiraCode Nerd Font", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 0;
+}
+
+window#waybar {
+    background: #1d2021;
+    border: 2px solid #0eaece;
+}
+
+tooltip {
+    background-color: #1d2021;
+    border: 2px solid #0eaece;
+}
+
+#clock,
+#tray,
+#cpu,
+#memory,
+#network,
+#pulseaudio{
+    margin: 6px 6px 6px 0px;
+    padding: 0px 4px;
+}
+
+#battery{
+    margin: 6px 6px 6px 0px;
+    padding: 0px 9px 0px 4px;
+}
+
+#workspaces {
+    background-color: #303536;
+    margin: 6px 0px 6px 6px;
+    border: 2px solid #434a4c;
+}
+
+#workspaces button {
+    all: initial;
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+    padding: 2px 4px;
+    color: #c7ab7a;
+}
+
+#workspaces button.focused {
+    color: #ddc7a1;
+}
+
+#workspaces button.active {
+    color: #62e74e;
+}
+
+#workspaces button.urgent {
+    background-color: #e78a4e;
+}
+
+#clock {
+    background-color: #303536;
+    border: 2px solid #434a4c;
+    color: #d4be98;
+}
+
+#tray {
+    background-color: #d4be98;
+    border: 2px solid #c7ab7a;
+}
+
+#custom-power {
+    margin: 6px 6px 6px 0px;
+    padding: 0px 7px 0px 4px;
+
+    background-color: #d4be98;
+    border: 2px solid #c7ab7a;
+}
+
+
+menu {
+    padding: 5px;
+    border-radius: 15px;
+    background: #1d2021;
+    color: #0eaece;
+    border: 2px solid #0eaece;
+}
+
+menuitem {
+    margin: 2px 0px;
+    background-color: #d4be98;
+    border: 1px solid #c7ab7a;
+    color: #1d2021;
+}
+
+menuitem:hover {
+    color: #0eaece;
+    background-color: #1d2021;
+    border: 1px solid #0eaece;
+}
+
+#battery {
+    background-color: #ddc7a1;
+    border: 2px solid #c7ab7a;
+    box-shadow: inset 0 -5px #22ff00;
+    color: #1d2021;
+}
+
+#cpu,
+#memory,
+#network,
+#pulseaudio {
+    background-color: #ddc7a1;
+    border: 2px solid #c7ab7a;
+    color: #1d2021;
+}
+
+#cpu.critical,
+#memory.critical,
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+    background-color: #ddc7a1;
+    border: 2px solid #c7ab7a;
+    box-shadow: inset 0 -3px #c14a4a;
+    color: #c14a4a;
+}

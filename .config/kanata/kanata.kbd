@@ -1,0 +1,102 @@
+(defcfg
+    process-unmapped-keys yes
+    danger-enable-cmd true
+)
+
+(defvar
+    tap-time 100
+    hold-time 250
+)
+
+
+(defsrc
+    ⎋       F1  F2  F4  F5  F6  F7  F8  F9  F10 F11 F12 Home    End Insert  Delete
+    `       1   2   3   4   5   6   7   8   9   0    =         ⌫
+    ⭾       q   w   e   r   t   z   u   i   o   p     
+    caps    a   s   d   f   g   h   j   k   l                ↩       
+    lshft   y   x   c   v   b   n   m            rshft
+    lctl lmet lalt          spc         ralt rmet rctl 
+)
+
+(deflayer base
+    ⎋       F1  F2  F4  F5  F6  F7  F8  F9  F10 F11 F12 Home    End Insert  Delete
+    `       1   2   3   4   5   6   7   8   9   0    =        ⌫
+    ⭾       q   w   e   r   t   z   u   i   o   p    
+    @sw     a   s   d   f   g   h   j   k   l                ↩       
+    shft    y   x   c   v   b   n   m            rshft
+    lctl lmet lalt          @␣+⌘         ralt rmet rctl 
+)
+
+(deflayer navigation
+    lrld    _   _   _   _   _   _   _   _   _   _   _   _    _  _  _
+    _       _   _   _   _   _   _   _   _   _   _   _          _
+    _       _   _   _   _   _   _   _   _   _   _    
+    _       @c  _   _   _   _   ◀   ▼   ▲   ▶                _       
+    _       _   _   _   _   _   _   _            _
+    _   _   _           _           _   _   _ 
+)
+
+(defalias
+    lp (unicode "(")
+    rp (unicode ")")
+    c lctrl
+)
+
+;; I'm not gonna use "ěščřžýáíé" keys often.
+;; I can either do ´ + <key> manually or just 
+;; ommit diacritics altogether.
+(defoverrides
+    (1) (lsft 1)    ;; + -> 1
+    (2) (lsft 2)
+    (3) (lsft 3)
+    (4) (lsft 4)
+    (5) (lsft 5)
+    (6) (lsft 6)
+    (7) (lsft 7)
+    (8) (lsft 8)
+    (9) (lsft 9)
+    (0) (lsft 0)
+
+    (lsft 1) (1)    ;; 1 -> +
+    (lsft 2) (2)
+    (lsft 3) (3)
+    (lsft 4) (4)
+    (lsft 5) (5)
+    (lsft 6) (6)
+    (lsft 7) (7)
+    (lsft 8) (8)
+    (lsft 9) (9)
+    (lsft 0) (0)
+
+    ;; necessary for my worskpace binds
+    (lmet 1) (lmet F1) 
+    (lmet 2) (lmet F2) 
+    (lmet 3) (lmet F3) 
+    (lmet 4) (lmet F4) 
+    (lmet 5) (lmet F5) 
+    (lmet 6) (lmet F6) 
+    (lmet 7) (lmet F7) 
+    (lmet 8) (lmet F8) 
+    (lmet 9) (lmet F9) 
+    (lmet 0) (lmet F10) 
+
+    (lmet lshft 1) (lmet lshft F1) 
+    (lmet lshft 2) (lmet lshft F2) 
+    (lmet lshft 3) (lmet lshft F3) 
+    (lmet lshft 4) (lmet lshft F4) 
+    (lmet lshft 5) (lmet lshft F5) 
+    (lmet lshft 6) (lmet lshft F6) 
+    (lmet lshft 7) (lmet lshft F7) 
+    (lmet lshft 8) (lmet lshft F8) 
+    (lmet lshft 9) (lmet lshft F9) 
+    (lmet lshft 0) (lmet lshft F10) 
+)
+
+(defalias
+    sw      (tap-hold $tap-time $hold-time
+                      ⎋
+                      (layer-toggle navigation))
+    ␣+⌘     (tap-hold $tap-time $hold-time
+                      ␣
+                      ‹⌘)
+)

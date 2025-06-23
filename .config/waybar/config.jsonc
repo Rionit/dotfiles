@@ -1,0 +1,174 @@
+{
+    "layer": "top",
+    "spacing": 0,
+    "height": 0,
+
+    "margin-top": 8,
+    "margin-right": 19,
+    "margin-bottom": 0,
+    "margin-left": 19,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+        //"hyprland/language"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "image",
+        "tray",
+        "cpu_text",
+        "cpu",
+        "memory",
+        "network",
+        "pulseaudio",
+        "battery",
+        "custom/power",
+        "cava"
+    ],
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    },
+
+    // TODO: Fix cava :(
+    "cava": {
+        "cava_config": "~/.config/cava/cava",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 14,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 10000,
+        "hide_on_silence": false,
+        // "format_silent": "quiet",
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
+
+    // TODO: fix the spotify img
+    "image#album-art": {
+        "path": "/tmp/mpd_art",
+        "size": 32,
+        "interval": 5,
+        "on-click": "mpc toggle"
+    },
+
+    "image/album-art": {
+        "exec":"~/.config/waybar/custom/spotify/album_art.sh",
+        "size": 32,
+        "interval": 30
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon} {windows} ",
+        "format-icons": {
+            "default": "",
+            "active": "",    
+            "urgent": "󰀦"     
+        },
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "kitty": "",
+            "obs": "󰑋",
+            "dolphin": "󰪶",
+            "Spotify": "",
+            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "brave": "󰖟", // Windows whose classes are "firefox"
+            "brave title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+            "code": "󰨞",
+        },
+    },
+
+    "tray": {
+        "spacing": 10,
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%H:%M - %a, %d %b %Y}",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 90
+        }
+    },
+
+    "memory": {
+        "format": " {percentage}%",
+        "interval": 2,
+
+        "states": {
+            "critical": 80
+        },
+
+        "tooltip-format": "{used} / {total} GiB"
+    },
+
+    "battery": {
+        "format": "{icon}",
+        "format-icons": ["","","","",""],
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": true,
+        "tooltip-format": "{timeTo}\n {capacity}%\n {health}%"
+    },
+
+    "network": {
+        "format-wifi" : "wifi {bandwidthDownBits}",
+        "format-ethernet": "eth {bandwidthDownBits}",
+        "format-disconnected" : "no network",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 150,
+        "format": "{volume}% {icon} ",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "default": ["","",""],
+            "headset": "",
+            "headphone": ""
+        },
+        "nospacing": 1,
+        "on-click": "pavucontrol",
+        "tooltip": true,
+        "tooltip-format": "{desc}\n{format_source}"
+    }
+}

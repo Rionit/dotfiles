@@ -1,0 +1,14 @@
+autologin.blob="F5C+kg9WsY3ERo/lA3D/EgYmemYLZgxSe2adz5noBi99OekZWPhySva3YaQp/lfgaAehp0+SHlkReLIBDjwq74XUxOOTcdZqMMtSmQgap84zs7kFZLb1De+FegUqliNb98MCXLFt6ALXfCChHOCCeGiasN5Fplt8JGwA8hwrBeA5l6RYwVPpkAvSWgqL4d2ZLBALMcsnOAkoM6/rfSK+o0GO7X/nJT5y3wO5oS1ViKCPrWwY5t+W7Ml+nGB9fw0X"
+autologin.canonical_username="rionitcz"
+autologin.saved_credentials="{\"rionitcz\":[\"rionitcz\",\"F5C+kg9WsY3ERo/lA3D/EgYmemYLZgxSe2adz5noBi99OekZWPhySva3YaQp/lfgaAehp0+SHlkReLIBDjwq74XUxOOTcdZqMMtSmQgap84zs7kFZLb1De+FegUqliNb98MCXLFt6ALXfCChHOCCeGiasN5Fplt8JGwA8hwrBeA5l6RYwVPpkAvSWgqL4d2ZLBALMcsnOAkoM6/rfSK+o0GO7X/nJT5y3wO5oS1ViKCPrWwY5t+W7Ml+nGB9fw0X\"]}"
+app.window.state.saved=true
+app.window.position.width=800
+app.rollback-to-sc=true
+es.send-on-startup=true
+core.clock_delta=0
+autologin.username="rionitcz"
+app.window.state=2
+app.window.position.saved=true
+app.window.position.height=632
+storage.last-location="/home/filip/.cache/spotify/Storage"
+app.last-launched-version="1.2.63.394.g126b0d89"

@@ -1,0 +1,21 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads]
+[scratchpads.kitty]
+command = "kitty --class scratchpadkitty"
+class = "scratchpadkitty"
+animation = "fromTop"
+size = "80% 60%"
+margin = 50
+lazy = true
+
+[scratchpads.spotify]
+command = "spotify --enable-features=UseOzonePlatform --ozone-platform=wayland"
+class = "spotify"
+animation = "fromBottom"
+size = "60% 80%"
+margin = 50
+lazy = true
+
+

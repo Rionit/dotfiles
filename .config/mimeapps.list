@@ -1,0 +1,11 @@
+[Added Associations]
+image/png=org.gnome.Loupe.dekstop;
+video/x-matroska=mpv-2.desktop;
+
+[Default Applications]
+image/bmp=org.gnome.Loupe.desktop;
+image/jpeg=org.gnome.Loupe.desktop;
+image/jpg=org.gnome.Loupe.desktop;
+image/png=org.gnome.Loupe.dekstop;
+image/webp=org.gnome.Loupe.desktop;
+video/x-matroska=mpv-2.desktop;

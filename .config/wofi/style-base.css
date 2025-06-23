@@ -1,0 +1,59 @@
+window {
+    background-color: $BG;
+    color: $FG;
+    border: 2px solid $PRIMARY;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: "FiraCode Nerd Font", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow:
+        -1px -1px 0 $BG,
+        1px -1px 0 $BG,
+        -1px 1px 0 $BG,
+        1px 1px 0 $BG;
+}
+
+#entry {
+    padding: 6px 10px;
+    margin: 3px;
+    border-radius: 8px;
+}
+
+#entry:selected {
+    background-color: $ACCENT;
+    color: $BG;
+}
+
+#input {
+    padding: 4px;
+    margin: 4px;
+    padding-left: 20px;
+    border: none;
+    color: $FG;
+    font-weight: bold;
+    background-color: $BG;
+    background: ;
+   	outline: none;
+    border-radius: 15px;
+    margin: 10px;
+    margin-bottom: 2px;
+}
+#input:focus {
+    border: 0px solid $BG;
+    margin-bottom: 0px;
+}
+
+#inner-box {
+    padding: 10px;
+}
+
+#outer-box {
+    margin: 0;
+    padding: 0;
+}
+
+#scroll {
+    margin: 0;
+    padding: 0;
+}

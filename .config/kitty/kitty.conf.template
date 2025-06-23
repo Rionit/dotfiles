@@ -1,0 +1,16 @@
+shell /usr/bin/fish
+
+# Colors
+background $BG
+foreground $FG
+cursor_color $PRIMARY
+selection_foreground $BG
+selection_background $ACCENT
+
+# Transparency and blur
+background_opacity 0.70
+
+bold_font true
+
+# Padding and window decorations
+window_padding_width 5
