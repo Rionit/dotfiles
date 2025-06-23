@@ -33,6 +33,11 @@ lazy = true
     "sleep 0.2; hyprpicker --format [format] | wl-copy"
 ]
 
+"Clipboard history" = [
+    {name="entry", command="cliphist list", filter="s/\t.*//"},
+    "cliphist decode '[entry]' | wl-copy"
+]
+
 "Webcam" = "mpv /dev/video0"
 
 "Hyprland logs" = 'kitty tail -f $XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/hyprland.log'
