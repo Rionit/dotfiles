@@ -5,6 +5,7 @@ fzf --fish | source
 
 if test "$FISH_MOO" = "1"
     ~/scripts/random_cow_fortune.sh
+    set FISH_MOO 0 # otherwise fzf mooin
 end
 
 function y
@@ -14,6 +15,12 @@ function y
         builtin cd -- "$cwd"
     end
     rm -f -- "$tmp"
+end
+
+# Fuzzy search multiple files with colored preview
+# and open them in nvim
+function envim
+    nvim $(fzf --preview='bat --color=always {}')
 end
 
 if status is-interactive
