@@ -63,8 +63,8 @@ apply_wallpaper() {
             -e "s|\$SECONDARY|$SECONDARY|g" \
             -e "s|\$ACCENT|$ACCENT|g" \
             "$KITTY_TEMPLATE" > "$KITTY_CONF"
-        kitty @ set-colors --all --config "$KITTY_CONF"
-
+        kill -SIGUSR1 $(pgrep kitty)
+                
         # Hyprlock
         # sed -i -E \
         #    -e "s|^(\\s*background\\s*=).*|\1 $wallpaper|" \

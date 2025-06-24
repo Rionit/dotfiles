@@ -1,5 +1,7 @@
 shell /usr/bin/fish
 
+allow_remote_control yes
+
 # Colors
 background $BG
 foreground $FG
