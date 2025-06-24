@@ -1,6 +1,11 @@
 starship init fish | source
 
-~/scripts/random_cow_fortune.sh
+# Set up fzf key bindings
+fzf --fish | source
+
+if test "$FISH_MOO" = "1"
+    ~/scripts/random_cow_fortune.sh
+end
 
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")

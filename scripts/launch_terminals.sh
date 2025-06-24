@@ -2,7 +2,7 @@
 # hi :3
 
 # Start first terminal
-kitty --class basic-term &
+FISH_MOO=1 exec kitty --class basic-term &
 sleep 0.2
 
 # Start second terminal
