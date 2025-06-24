@@ -14,4 +14,4 @@ kitty --class bonsai -e cbonsai -l &
 sleep 0.2
 
 # Start fourth terminal
-kitty --class fastfetch -e sh -c "fastfetch; exec bash" &
+kitty --class fastfetch -e fish -c "fastfetch; exec fish" &

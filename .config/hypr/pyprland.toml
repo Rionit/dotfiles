@@ -3,7 +3,7 @@ plugins = ["scratchpads", "expose", "shortcuts_menu"]
 
 [scratchpads]
 [scratchpads.kitty]
-command = "kitty --class scratchpadkitty"
+command = "kitty --class scratchpadkitty -e fish -c 'bash ~/scripts/random_fastfetch.sh; exec fish'"
 class = "scratchpadkitty"
 animation = "fromTop"
 size = "80% 60%"
