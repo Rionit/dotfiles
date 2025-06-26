@@ -8,6 +8,10 @@ if test "$FISH_MOO" = "1"
     set FISH_MOO 0 # otherwise fzf mooin
 end
 
+function gifetch
+    bash $HOME/scripts/random_fastfetch.sh
+end
+
 function y
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
