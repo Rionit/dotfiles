@@ -29,7 +29,8 @@ tooltip {
 #cpu,
 #memory,
 #network,
-#pulseaudio {
+#pulseaudio,
+#backlight {
     margin: 6px 6px 6px 0px;
     padding: 0px 4px;
 }
@@ -116,7 +117,8 @@ menuitem:hover {
 #cpu,
 #memory,
 #network,
-#pulseaudio {
+#pulseaudio,
+#backlight {
     background-color: @primary;
     border: 2px solid @secondary;
     color: @bg;

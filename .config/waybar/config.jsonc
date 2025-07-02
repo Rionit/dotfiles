@@ -21,6 +21,7 @@
     "modules-right": [
         "image",
         "tray",
+        "backlight",
         "cpu_text",
         "cpu",
         "memory",
@@ -84,6 +85,12 @@
         "interval": 30
     },
 
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", ""]
+    },
+    
     "hyprland/workspaces": {
         "format": "{icon} {windows} ",
         "format-icons": {
@@ -91,6 +98,10 @@
             "active": "",    
             "urgent": "󰀦"     
         },
+        "persistent-only": true,
+        "persistent-workspaces": {
+		"*": 4
+	    },
         "window-rewrite-default": "",
         "window-rewrite": {
             "kitty": "",
