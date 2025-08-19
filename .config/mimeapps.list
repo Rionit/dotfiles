@@ -1,8 +1,10 @@
 [Added Associations]
+application/pureref=PureRef-2.desktop;
 image/png=org.gnome.Loupe.dekstop;
 video/x-matroska=mpv-2.desktop;
 
 [Default Applications]
+application/pureref=PureRef-2.desktop;
 image/bmp=org.gnome.Loupe.desktop;
 image/jpeg=org.gnome.Loupe.desktop;
 image/jpg=org.gnome.Loupe.desktop;

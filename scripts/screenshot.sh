@@ -6,10 +6,10 @@ filename="$HOME/screenshots/screenshot-$(date +%s).png"
 # Check args
 case "$1" in
     selection)
-        grim -g "$(slurp)" "$filename"
+        grim -g "$(slurp)" - | tee "$filename" | wl-copy --type image/png
         ;;
     fullscreen)
-        grim "$filename"
+        grim - | tee "$filename" | wl-copy --type image/png
         ;;
     *)
         echo "Usage: $0 [selection|fullscreen]"
