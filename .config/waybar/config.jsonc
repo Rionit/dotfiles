@@ -88,7 +88,8 @@
     "backlight": {
         "device": "amdgpu_bl1",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""],
+	"on-click": "~/scripts/wlsunset_toggle.sh"
     },
     
     "hyprland/workspaces": {
@@ -112,8 +113,8 @@
             "brave": "󰖟", // Windows whose classes are "firefox"
             "brave title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-            "code": "󰨞",
-        },
+            "code": "󰨞"
+        }
     },
 
     "tray": {

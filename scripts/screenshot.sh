@@ -16,3 +16,6 @@ case "$1" in
         exit 1
         ;;
 esac
+
+# Send desktop notification with image preview
+notify-send -i "$filename" "Screenshot saved" "$filename"
