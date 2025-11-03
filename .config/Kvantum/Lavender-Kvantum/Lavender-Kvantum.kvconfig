@@ -96,9 +96,9 @@ progress.indicator.text.color=#d3dae3
 
 [Hacks]
 transparent_ktitle_label=true
-transparent_dolphin_view=true
+transparent_dolphin_view=false
 transparent_pcmanfm_sidepane=true
-blur_translucent=true
+blur_translucent=false
 transparent_menutitle=true
 respect_darkness=true
 kcapacitybar_as_progressbar=true

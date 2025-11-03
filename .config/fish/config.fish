@@ -21,6 +21,28 @@ function y
     rm -f -- "$tmp"
 end
 
+function palette
+    # Check that a file path is provided
+    if test (count $argv) -eq 0
+        echo "Usage: palette path/to/colors.json"
+        return 1
+    end
+
+    set file $argv[1]
+
+    # Check that the file exists
+    if not test -f $file
+        echo "File not found: $file"
+        return 1
+    end
+
+    # Extract hex colors from JSON using jq
+    set colors (jq -r '.bg, .fg, .primary, .secondary, .accent' $file | tr -d '#')
+
+    # Use pastel to display the palette with names
+    pastel color $colors | pastel format name
+end
+
 # Fuzzy search multiple files with colored preview
 # and open them in nvim
 function envim
