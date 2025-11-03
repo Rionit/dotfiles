@@ -20,6 +20,11 @@ window {
     border-radius: 8px;
 }
 
+#entry image {
+    padding: 5px 20px 5px 0px;
+    border-radius: 8px;
+}
+
 #entry:selected {
     background-color: #913ce6;
     color: #000000;
@@ -33,12 +38,12 @@ window {
     color: #ebe9fc;
     font-weight: bold;
     background-color: #000000;
-    background: ;
    	outline: none;
     border-radius: 15px;
     margin: 10px;
     margin-bottom: 2px;
 }
+
 #input:focus {
     border: 0px solid #000000;
     margin-bottom: 0px;
@@ -50,7 +55,7 @@ window {
 
 #outer-box {
     margin: 0;
-    padding: 0;
+    padding: 2px;
 }
 
 #scroll {
