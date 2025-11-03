@@ -38,8 +38,8 @@
         "menu": "on-click",
         "menu-file": "~/.config/waybar/power_menu.xml",
         "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
+            "shutdown": "shutdown now",
+            "reboot": "reboot now",
             "suspend": "systemctl suspend",
             "hibernate": "systemctl hibernate"
         }

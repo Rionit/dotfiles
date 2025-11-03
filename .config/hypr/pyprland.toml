@@ -33,10 +33,7 @@ lazy = true
     "sleep 0.2; hyprpicker --format [format] | wl-copy"
 ]
 
-"Clipboard history" = [
-    {name="entry", command="cliphist list", filter="s/\t.*//"},
-    "cliphist decode '[entry]' | wl-copy"
-]
+"Clipboard history" = "cliphist list | fzf --no-sort --preview 'cliphist decode {1}' | cliphist decode | wl-copy"
 
 "Webcam" = "mpv /dev/video0"
 
