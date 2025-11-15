@@ -28,7 +28,7 @@ DUNST_ACTION=$(dunstify -a screenshot -i "$FILENAME" -A "view,View Screenshot" S
 case "$DUNST_ACTION" in
     view)
         # Use an image viewer compatible with Wayland, e.g., swayimg or sxiv
-        loupe "$FILENAME"
+        swappy -f "$FILENAME"
         ;;
 esac
 
