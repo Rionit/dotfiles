@@ -96,7 +96,7 @@ progress.indicator.text.color=#d3dae3
 
 [Hacks]
 transparent_ktitle_label=true
-transparent_dolphin_view=false
+transparent_dolphin_view=true
 transparent_pcmanfm_sidepane=true
 blur_translucent=false
 transparent_menutitle=true

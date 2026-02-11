@@ -6,7 +6,7 @@ WAYBAR_CSS="$HOME/.config/waybar/style.css"
 WAYBAR_TEMPLATE="$HOME/.config/waybar/style-base.css"
 
 # Get current wallpaper (if any)
-CURRENT_WALL=$(hyprctl hyprpaper listloaded | grep -E '\.(jpg|png)$' | head -n1)
+CURRENT_WALL=$(cat $WALLPAPER_DIR/current | grep -E '\.(jpg|png)$' | head -n1)
 CURRENT_NAME=$(basename "$CURRENT_WALL")
 
 # Pick a new wallpaper at random (not same as current)
@@ -15,10 +15,8 @@ BASENAME=$(basename "$WALLPAPER")
 SCHEME_FILE="$COLORSCHEME_DIR/$BASENAME.json"
 
 # Load wallpaper
-hyprctl hyprpaper unload all
-hyprctl hyprpaper preload "$WALLPAPER"
 MONITOR=$(hyprctl monitors | grep Monitor | awk '{print $2}')
-hyprctl hyprpaper wallpaper "$MONITOR,$WALLPAPER"
+hyprctl hyprpaper wallpaper "$MONITOR,$WALLPAPER,cover"
 
 # Load colors
 if [[ -f "$SCHEME_FILE" ]]; then

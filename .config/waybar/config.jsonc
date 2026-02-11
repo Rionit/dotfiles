@@ -22,15 +22,20 @@
         "image",
         "tray",
         "backlight",
-        "cpu_text",
         "cpu",
         "memory",
         "network",
         "pulseaudio",
         "battery",
-        "custom/power",
-        "cava"
+        "custom/kanata",
+        "custom/power"
+        //"cava"
     ],
+
+    "custom/kanata":{
+        "exec": "~/.config/waybar/kanata_layout_indicator.sh",
+        "format": "{text}"
+    },
 
     "custom/power": {
         "format": "⏻",
@@ -89,7 +94,7 @@
         "device": "amdgpu_bl1",
         "format": "{icon} {percent}%",
         "format-icons": ["", "", ""],
-	"on-click": "~/scripts/wlsunset_toggle.sh"
+	    "on-click": "~/scripts/wlsunset_toggle.sh"
     },
     
     "hyprland/workspaces": {

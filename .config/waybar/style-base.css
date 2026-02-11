@@ -78,7 +78,7 @@ tooltip {
     border: 2px solid @secondary;
 }
 
-#custom-power {
+#custom-power, #custom-kanata {
     margin: 6px 6px 6px 0px;
     padding: 0px 7px 0px 4px;
 

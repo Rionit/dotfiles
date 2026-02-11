@@ -1,8 +1,8 @@
 @define-color bg #000000;
-@define-color fg #c0c0c0;
-@define-color primary #996633;
-@define-color secondary #663300;
-@define-color accent #ffd166;
+@define-color fg #e7d8b1;
+@define-color primary #999999;
+@define-color secondary #424153;
+@define-color accent #cccccc;
 
 * {
     border: none;
@@ -78,7 +78,7 @@ tooltip {
     border: 2px solid @secondary;
 }
 
-#custom-power {
+#custom-power, #custom-kanata {
     margin: 6px 6px 6px 0px;
     padding: 0px 7px 0px 4px;
 

@@ -8,9 +8,8 @@
     hold-time 250
 )
 
-
 (defsrc
-    ⎋       F1  F2  F4  F5  F6  F7  F8  F9  F10 F11 F12 Home    End Insert  Delete
+    ⎋       F1  F2  F3  F4  F5  F6  F7  F8  F9  F10 F11 F12 Home End Insert  Delete
     `       1   2   3   4   5   6   7   8   9   0    =         ⌫
     ⭾       q   w   e   r   t   z   u   i   o   p     
     caps    a   s   d   f   g   h   j   k   l                ↩       
@@ -19,17 +18,26 @@
 )
 
 (deflayer base
-    ⎋       F1  F2  F4  F5  F6  F7  F8  F9  F10 F11 F12 Home    End Insert  Delete
+    ⎋       F1  F2  F3  F4  F5  F6  F7  F8  F9  F10 F11 F12 Home End Insert  Delete
     `       1   2   3   4   5   6   7   8   9   0    =        ⌫
     ⭾       q   w   e   r   t   z   u   i   o   p    
     @sw     a   s   d   f   g   h   j   k   l                ↩       
     shft    y   x   c   v   b   n   m            rshft
     lctl lmet lalt          @␣+⌘         ralt rmet rctl 
+)  
+
+(deflayer gaming
+    ⎋       F1  F2  F3  F4  F5  F6  F7  F8  F9  F10 F11 @swb Home End Insert  Delete
+    `       1   2   3   4   5   6   7   8   9   0    =        ⌫
+    ⭾       q   w   e   r   t   z   u   i   o   p    
+    @sw     a   s   d   f   g   h   j   k   l                ↩       
+    shft    y   x   c   v   b   n   m            rshft
+    lctl lmet lalt          spc         ralt rmet rctl 
 )
 
 (deflayer navigation
-    lrld    _   _   _   _   _   _   _   _   _   _   _   _    _  _  _
-    _       _   _   _   _   _   _   _   _   _   _   _          _
+    lrld    _   _   _   _   _   _   _   _   _   _   _  @swg  _    _  _  _
+    _       _   _   _   _   _   _   _   _   _   _   _        _
     _       _   _   _   _   _   _   _   _   _   _    
     _       @c  _   _   _   _   ◀   ▼   ▲   ▶                _       
     _       _   _   _   _   _   _   _            _
@@ -92,11 +100,15 @@
     (lmet lshft 0) (lmet lshft F10) 
 )
 
-(defalias
-    sw      (tap-hold $tap-time $hold-time
-                      ⎋
-                      (layer-toggle navigation))
-    ␣+⌘     (tap-hold $tap-time $hold-time
-                      ␣
-                      ‹⌘)
+(defalias 
+    sw 
+        (tap-hold $tap-time $hold-time 
+            ⎋ 
+            (layer-toggle navigation))
+
+    ␣+⌘ (tap-hold $tap-time $hold-time 
+        ␣ 
+        ‹⌘) 
+    swg (layer-switch gaming)
+    swb (layer-switch base)
 )

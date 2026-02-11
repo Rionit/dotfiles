@@ -10,12 +10,12 @@ WOFI_TEMPLATE="$HOME/.config/wofi/style-base.css"
 WOFI_STYLE="$HOME/.config/wofi/style.css"
 KITTY_TEMPLATE="$HOME/.config/kitty/kitty.conf.template"
 KITTY_CONF="$HOME/.config/kitty/kitty.conf"
-COLORSCHEME_TEMPLATE="$HOME/.config/color-schemes/WallpaperScheme-base.colors"
-COLORSCHEME_FILE="$HOME/.config/color-schemes/WallpaperScheme.colors"
+# COLORSCHEME_TEMPLATE="$HOME/.config/color-schemes/WallpaperScheme-base.colors"
+# COLORSCHEME_FILE="$HOME/.config/color-schemes/WallpaperScheme.colors"
 HYPRLOCK_CONF="$HOME/.config/hypr/hyprlock.conf"
 
 # Get current wallpaper (if any)
-CURRENT_WALL=$(hyprctl hyprpaper listloaded | grep -E '\.(jpg|png)$' | head -n1)
+CURRENT_WALL=$(cat $WALLPAPER_DIR/current | grep -E '\.(jpg|png)$' | head -n1)
 CURRENT_NAME=$(basename "$CURRENT_WALL")
 
 # Function to apply wallpaper and style
@@ -25,10 +25,9 @@ apply_wallpaper() {
     local scheme_file="$COLORSCHEME_DIR/$basename.json"
 
     # Load wallpaper
-    hyprctl hyprpaper unload all
-    hyprctl hyprpaper preload "$wallpaper"
     MONITOR=$(hyprctl monitors | grep Monitor | awk '{print $2}')
-    hyprctl hyprpaper wallpaper "$MONITOR,$wallpaper"
+    hyprctl hyprpaper wallpaper "$MONITOR,$wallpaper,cover"
+    echo $basename > $WALLPAPER_DIR/current
 
     # Apply color scheme
     if [[ -f "$scheme_file" ]]; then
@@ -75,12 +74,12 @@ apply_wallpaper() {
         # pkill -SIGUSR2 hyprlock
 
         # Dolphin
-        sed -e "s|\$BG|$BG|g" \
-            -e "s|\$FG|$FG|g" \
-            -e "s|\$PRIMARY|$PRIMARY|g" \
-            -e "s|\$SECONDARY|$SECONDARY|g" \
-            -e "s|\$ACCENT|$ACCENT|g" \
-            "$COLORSCHEME_TEMPLATE" > "$COLORSCHEME_FILE"
+        # sed -e "s|\$BG|$BG|g" \
+        #     -e "s|\$FG|$FG|g" \
+        #     -e "s|\$PRIMARY|$PRIMARY|g" \
+        #     -e "s|\$SECONDARY|$SECONDARY|g" \
+        #     -e "s|\$ACCENT|$ACCENT|g" \
+        #     "$COLORSCHEME_TEMPLATE" > "$COLORSCHEME_FILE"
 
         # Waybar
         sed -e "s|@define-color bg .*|@define-color bg $BG;|" \

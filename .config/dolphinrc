@@ -1,10 +1,12 @@
 MenuBar=Disabled
 
 [General]
-ModifiedStartupSettings=true
 UseTabForSwitchingSplitView=true
 Version=202
 ViewPropsTimestamp=2025,6,18,17,11,51.637
+
+[Icons]
+Theme=Infinity-Lavender-Dark-Icons
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
@@ -13,11 +15,8 @@ Places Icons Static Size=22
 [MainWindow]
 MenuBar=Disabled
 
-[Icons]
-Theme=Infinity-Lavender-Dark-Icons
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,glycin-heif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,gnome-epub-thumbnailer,exrthumbnail,directorythumbnail,imagethumbnail,glycin-image-rs,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,glycin-svg,svgthumbnail,textthumbnail
 
 [UiSettings]
 ColorScheme=bluegrey
-
-[PreviewSettings]
-Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,directorythumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,opendocumentthumbnail,svgthumbnail,windowsexethumbnail,windowsimagethumbnail,gdk-pixbuf-thumbnailer
