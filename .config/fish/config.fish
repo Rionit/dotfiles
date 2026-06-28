@@ -53,3 +53,6 @@ end
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
+
+# Created by `pipx` on 2026-06-28 09:04:52
+set PATH $PATH /home/filip/.local/bin

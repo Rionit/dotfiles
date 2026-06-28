@@ -1,8 +1,8 @@
 @define-color bg #000000;
-@define-color fg #e7d8b1;
-@define-color primary #999999;
+@define-color fg #ebe9fc;
+@define-color primary #663399;
 @define-color secondary #424153;
-@define-color accent #cccccc;
+@define-color accent #913ce6;
 
 * {
     border: none;

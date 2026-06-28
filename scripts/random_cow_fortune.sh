@@ -6,9 +6,14 @@ custom_cows=("actually" "alpaca" "default" "blowfish" "bong" "bud-frogs" "bunny"
 # Pick a random cow
 random_cow=${custom_cows[$RANDOM % ${#custom_cows[@]}]}
 
-# 50% chance to use lolcat
-if (( RANDOM % 2 == 0 )); then
-    fortune -s | cowsay -f "$random_cow" | lolcat
-else
-    fortune -s | cowsay -f "$random_cow"
+# 10% chance to even work
+if (( RANDOM % 10 == 0)); then
+    # 50% chance to use lolcat
+    if (( RANDOM % 2 == 0 )); then
+        fortune -s | cowsay -f "$random_cow" | lolcat
+    else
+        fortune -s | cowsay -f "$random_cow"
+    fi     
 fi
+
+

@@ -1,2 +1,2 @@
 #!/bin/bash
-FISH_MOO=1 exec kitty
+FISH_MOO=1 exec kitty --single-instance

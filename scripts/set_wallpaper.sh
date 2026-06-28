@@ -4,7 +4,7 @@ WALLPAPER_DIR="$HOME/wallpapers"
 COLORSCHEME_DIR="$HOME/wallpaper_schemes"
 WAYBAR_CSS="$HOME/.config/waybar/style.css"
 WAYBAR_TEMPLATE="$HOME/.config/waybar/style-base.css"
-HYPRLAND_CONF="$HOME/.config/hypr/hyprland.conf"
+HYPRLAND_CONF="$HOME/.config/hypr/hyprland.lua"
 DUNST_CONF="$HOME/.config/dunst/dunstrc"
 WOFI_TEMPLATE="$HOME/.config/wofi/style-base.css"
 WOFI_STYLE="$HOME/.config/wofi/style.css"
@@ -38,8 +38,7 @@ apply_wallpaper() {
         ACCENT=$(jq -r .accent "$scheme_file")
 
         # Hyprland window border color
-        sed -i -E "s|(col.active_border = ).*# AUTOGEN_BORDER|\1rgb(${PRIMARY#\#}) rgb(${ACCENT#\#}) 45deg  # AUTOGEN_BORDER|" "$HYPRLAND_CONF"
-        hyprctl reload
+        hyprctl keyword general:col.active_border "rgba(${PRIMARY#\#}) rgba(${ACCENT#\#}) 45deg"
 
         # Dunst colors
         echo "Writing to $DUNST_CONF" 
@@ -91,7 +90,12 @@ apply_wallpaper() {
 
         pkill -SIGUSR2 waybar
 
-        
+        # Write colors for Lua config to read at startup
+        mkdir -p "$(dirname "$HYPRLAND_CONF")"
+        cat > "$(dirname "$HYPRLAND_CONF")/wallpaper-colors.lua" <<- EOF
+return { active_border = { colors = {"rgba(${PRIMARY#\#})", "rgba(${ACCENT#\#})"}, angle = 45 } }
+EOF
+
     else
         echo "⚠️ No matching color scheme for $basename"
     fi

@@ -149,7 +149,7 @@
             "critical": 80
         },
 
-        "tooltip-format": "{used} / {total} GiB"
+        "tooltip-format": "{used:0.1f} / {total:0.1f} GiB\n{swapUsed:0.1f} / {swapTotal:0.1f} GiB (SWAP)"
     },
 
     "battery": {
