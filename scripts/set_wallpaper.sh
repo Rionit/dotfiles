@@ -38,7 +38,7 @@ apply_wallpaper() {
         ACCENT=$(jq -r .accent "$scheme_file")
 
         # Hyprland window border color
-        hyprctl keyword general:col.active_border "rgba(${PRIMARY#\#}) rgba(${ACCENT#\#}) 45deg"
+        hyprctl keyword general:col.active_border "rgb(${PRIMARY#\#}) rgb(${ACCENT#\#}) 45deg"
 
         # Dunst colors
         echo "Writing to $DUNST_CONF" 
@@ -93,7 +93,7 @@ apply_wallpaper() {
         # Write colors for Lua config to read at startup
         mkdir -p "$(dirname "$HYPRLAND_CONF")"
         cat > "$(dirname "$HYPRLAND_CONF")/wallpaper-colors.lua" <<- EOF
-return { active_border = { colors = {"rgba(${PRIMARY#\#})", "rgba(${ACCENT#\#})"}, angle = 45 } }
+return { active_border = { colors = {"rgba(${PRIMARY#\#}ff)", "rgba(${ACCENT#\#}ff)"}, angle = 45 } }
 EOF
 
     else
