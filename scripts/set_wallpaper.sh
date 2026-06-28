@@ -37,9 +37,6 @@ apply_wallpaper() {
         SECONDARY=$(jq -r .secondary "$scheme_file")
         ACCENT=$(jq -r .accent "$scheme_file")
 
-        # Hyprland window border color
-        hyprctl keyword general:col.active_border "rgb(${PRIMARY#\#}) rgb(${ACCENT#\#}) 45deg"
-
         # Dunst colors
         echo "Writing to $DUNST_CONF" 
         sed -i -E "s|^\s*background\s*=.*|background = \"$BG\"|" "$DUNST_CONF"
@@ -95,6 +92,9 @@ apply_wallpaper() {
         cat > "$(dirname "$HYPRLAND_CONF")/wallpaper-colors.lua" <<- EOF
 return { active_border = { colors = {"rgba(${PRIMARY#\#}ff)", "rgba(${ACCENT#\#}ff)"}, angle = 45 } }
 EOF
+
+        # Hyprland window border color — reload picks up new wallpaper-colors.lua
+        hyprctl reload
 
     else
         echo "⚠️ No matching color scheme for $basename"
